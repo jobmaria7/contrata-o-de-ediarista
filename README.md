@@ -1,0 +1,1 @@
+# contrata-o-de-ediarista
