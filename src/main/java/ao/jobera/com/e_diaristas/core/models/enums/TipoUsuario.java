@@ -1,0 +1,1 @@
+package ao.jobera.com.e_diaristas.core.models.enums;public enum TipoUsuario {    ADMIN,    CLIENT,    DIARIST}

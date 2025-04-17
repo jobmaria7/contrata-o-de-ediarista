@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:replace="~{adminlte3 :: layout (~{::title}, ~{::main}, _, _)}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Formulario de Serviços</title>
+</head>
+
+<body>
+<main>
+	<div class="card-title row  container bg-primary"
+	     style="color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px;" >
+		<div class="card-title">
+			<h5>Cadastrar | Editar Novo Serviço</h5>
+		</div>
+	</div>
+	<div class="container"
+	     style="background:
+         #fff !important;
+         padding: 20px !important;
+         padding-top: 40px !important;
+         border-radius: 5px;
+         ">
+		<form method="post" th:object="${form}" data-aos="zoom">
+			<div class="row mb-4">
+				<div class="col">
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="nome" th:field="*{nome}" type="text"/>
+						
+						<label class="form-label" for="nome">Nome</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('nome')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorMinimo" th:field="*{valorMinimo}" type="number"/>
+						<label class="form-label" for="valorMinimo">Valor Mínimo</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorMinimo')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="qtdHoras" th:field="*{qtdHoras}" type="number"/>
+						<label class="form-label" for="qtdHoras">Quantidade Horas</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('qtdHoras')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Email input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="porcentagemComissao" th:field="*{porcentagemComissao}"
+						       type="text"/>
+						<label class="form-label" for="porcentagemComissao">Porcentagem Comissão</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('porcentagemComissao')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasQuarto" th:field="*{horasQuarto}" type="text"/>
+						<label class="form-label" for="horasQuarto">Horas Quarto</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasQuarto')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorQuarto" th:field="*{valorQuarto}" type="text"/>
+						<label class="form-label" for="valorQuarto">Valor Quarto</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorQuarto')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Email input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasSala" th:field="*{horasSala}" type="text"/>
+						<label class="form-label" for="horasSala">Horas Sala</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasSala')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorSala" th:field="*{valorSala}" type="text"/>
+						<label class="form-label" for="valorSala">Valor Sala</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorSala')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasBanheiro" th:field="*{horasBanheiro}" type="text"/>
+						<label class="form-label" for="horasBanheiro">Horas Banheiro</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasBanheiro')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Email input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorBanheiro" th:field="*{valorBanheiro}" type="text"/>
+						<label class="form-label" for="valorBanheiro">Valor Banheiro</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorBanheiro')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col">
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasCozinha" th:field="*{horasCozinha}" type="text"/>
+						<label class="form-label" for="horasCozinha">Horas Cozinha</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasCozinha')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorCozinha" th:field="*{valorCozinha}" type="text"/>
+						<label class="form-label" for="valorCozinha">Valor Cozinha</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorCozinha')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasQuintal" th:field="*{horasQuintal}" type="text"/>
+						<label class="form-label" for="horasQuintal">Horas Quintal</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasQuintal')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Email input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorQuintal" th:field="*{valorQuintal}" type="text"/>
+						<label class="form-label" for="valorQuintal">Valor Quintal</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorQuintal')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="horasOutros" th:field="*{horasOutros}" type="text"/>
+						<label class="form-label" for="horasOutros">Horas Outros</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('horasOutros')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<!-- Name input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="valorOutros" th:field="*{valorOutros}" type="text"/>
+						<label class="form-label" for="valorOutros">Valor Outros</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('valorOutros')}" th:text="${erro}"></p>
+					</div>
+				</div>
+				<div class="col">
+					<select class="form-control" id="icone" th:field="*{icone}">
+						<option th:each="icone : ${icones}" th:text="${icone.nome}" th:value="${icone}">
+						</option>
+					</select>
+					<label class="form-label" for="icone">Ícones</label>
+					<p class="alert alert-danger" data-aos="zoom" role="alert" style="margin-top: 10px !important;"
+					   th:each="erro: ${#fields.errors('icone')}" th:text="${erro}"></p>
+				</div>
+				<div class="col">
+					<!-- Email input -->
+					<div class="form-outline" data-mdb-input-init>
+						<input class="form-control" id="posicao" th:field="*{posicao}" type="text"/>
+						<label class="form-label" for="posicao">Posicao</label>
+						<p class="alert alert-danger" data-aos="zoom" role="alert"
+						   style="margin-top: 10px !important;"
+						   th:each="erro: ${#fields.errors('posicao')}" th:text="${erro}"></p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="btns" style="">
+				<button class="btn btn-outline-primary" type="submit">ENVIAR</button>
+				<a class="btn btn-outline-secondary" role="button" th:href="@{/admin/servicos}">VOLTAR</a>
+			</div>
+		
+		</form>
+	</div>
+</main>
+</body>
+
+</html>

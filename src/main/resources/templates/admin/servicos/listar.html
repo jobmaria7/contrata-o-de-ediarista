@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" th:replace="~{adminlte3 :: layout (~{::title}, ~{::main}, _, _)}"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<meta contain="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Formulario de Serviços</title>
+</head>
+
+<body>
+<main>
+	<div class="row card-header">
+		<div class="card-title"><h5>Listar Serviços</h5></div>
+		<div class="card-tools">
+			<a class="btn btn-success" th:href="@{/admin/servicos/cadastrar}">Adicionar Novo Serviço</a>
+		</div>
+	</div>
+	<div class="card-body">
+		<table class=" table table-white table-hover text-center">
+			<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">NOME</th>
+				<th scope="col">ACÇÕES</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="servico: ${servicos}">
+				<th scope="row" th:text="${servico.id}"></th>
+				<td th:text="${servico.nome}"></td>
+				
+				<td>
+					<a class="btn btn-primary" role="button" th:href="@{/admin/servicos/{id}/editar(id=${servico.id})}">Editar</a>
+					<a class="btn btn-danger"
+					   data-bs-target="#confirmDeleteModal"
+					   data-bs-toggle="modal"
+					   data-servico-id="${servico.id}"
+					   th:href="@{/admin/servicos/{id}/excluir (id=${servico.id})}"
+					>Excluir</a>
+				</td>
+				<div aria-hidden="true" aria-labelledby="confirmDeleteModalLabel" class="modal fade"
+				     id="confirmDeleteModal"
+				     tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+								<button aria-label="Fechar" class="btn-close" data-bs-dismiss="modal"
+								        type="button"></button>
+							</div>
+							<div class="modal-body">
+								Tem certeza de que deseja excluir este serviço?
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Cancelar
+								</button>
+								<a class="btn btn-danger"
+								   data-servico-id="${servico.id}"
+								   th:href="@{/admin/servicos/{id}/excluir (id=${servico.id})}"
+								>Sim, excluir</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</main>
+</body>
+
+</html>

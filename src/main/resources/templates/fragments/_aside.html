@@ -1,0 +1,52 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" th:fragment="aside"
+       xmlns:th="http://www.w3.org/1999/xhtml">
+	<!-- Brand Logo -->
+	<a class="brand-link" href="">
+		<img alt=" Logo" class="brand-image img-circle elevation-3" src="">
+		<span class="brand-text font-weight-light">E-Diaristas</span>
+	</a>
+	
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<div class="image">
+				<img alt="User" class="img-circle elevation-2" src="https://placekitten.com/128/128">
+			</div>
+			<div class="info">
+				<a class="d-block" href="#">user@mail.com</a>
+			</div>
+		</div>
+		<!-- Sidebar Menu -->
+		<nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column" data-accordion="false" data-widget="treeview" role="menu">
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="nav-icon fas fa-broom"></i>
+						<p>
+							Serviços
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/servicos/cadastrar}">
+								<i class="nav-icon fas fa-edit nav-icon"></i>
+								<p>Cadastrar Serviço</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/servicos}">
+								<i class="fas fa-table nav-icon"></i>
+								<p>Listar Serviços</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		
+		</nav>
+		<!-- /.sidebar-menu -->
+	</div>
+	<!-- /.sidebar -->
+</aside>

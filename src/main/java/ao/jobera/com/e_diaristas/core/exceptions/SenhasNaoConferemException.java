@@ -1,0 +1,1 @@
+package ao.jobera.com.e_diaristas.core.exceptions;import org.springframework.validation.FieldError;public class SenhasNaoConferemException extends ValidationsException {    public SenhasNaoConferemException(String message, FieldError fieldError) {        super(message, fieldError);    }}
